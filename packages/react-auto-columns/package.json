@@ -1,0 +1,61 @@
+{
+  "name": "react-auto-columns",
+  "version": "0.0.0",
+  "description": "A React component that automatically arranges child elements into columns based on the available screen space, similar to the Discord GIF browser. This package is great for creating product listings, galleries, and more.",
+  "keywords": [
+    "react",
+    "component",
+    "layout",
+    "grid",
+    "columns",
+    "responsive",
+    "UI",
+    "breakpoints",
+    "library",
+    "Discord",
+    "GIF"
+  ],
+  "homepage": "https://github.com/taep96/react-components/tree/main/react-auto-columns#README",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/taep96/react-components/tree/main/react-auto-columns"
+  },
+  "bugs": {
+    "url": "https://github.com/taep96/react-components/issues"
+  },
+  "license": "MIT",
+  "author": "taep96 <taep96@cock.li> (https://taep96.moe/)",
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "main": "./dist/lib.umd.js",
+  "module": "./dist/lib.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/lib.es.js",
+      "require": "./dist/lib.umd.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc && vite build",
+    "dev": "tsc --watch & NODE_ENV=development vite build --watch --clearScreen false",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --fix --cache",
+    "format": "prettier . --check --write --ignore-path ../../.prettierignore  --cache"
+  },
+  "peerDependencies": {
+    "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
+    "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "@types/react": "^18.0.33",
+    "@types/react-dom": "^18.0.6",
+    "@vitejs/plugin-react-swc": "^3.3.0",
+    "typescript": "^5.0.4",
+    "vite": "^4.2.1",
+    "vite-plugin-dts": "^2.2.0"
+  }
+}

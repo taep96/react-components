@@ -1,0 +1,7 @@
+{
+  "include": ["vite.config.ts", "*.config.*", ".eslintrc.cjs"],
+  "references": [
+    { "path": "./react-auto-columns/tsconfig.json" },
+    { "path": "./react-auto-columns-demo/tsconfig.json" }
+  ]
+}
