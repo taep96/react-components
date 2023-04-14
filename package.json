@@ -14,7 +14,8 @@
     "format": "turbo format",
     "lint:root": "eslint . --cache",
     "lint:fix:root": "eslint . --fix --cache",
-    "format:root": "prettier . --check --write --cache"
+    "format:root": "prettier . --check --write --cache",
+    "publish-packages": "pnpm build && pnpm changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^2.26.1",
