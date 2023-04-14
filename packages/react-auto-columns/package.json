@@ -1,6 +1,6 @@
 {
   "name": "react-auto-columns",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A React component that automatically arranges child elements into columns based on the available screen space, similar to the Discord GIF browser. This package is great for creating product listings, galleries, and more.",
   "keywords": [
     "react",
