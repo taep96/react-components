@@ -1,5 +1,11 @@
 # react-auto-columns
 
+## 1.1.3
+
+### Patch Changes
+
+- 03e77a1: fix type export order
+
 ## 1.1.2
 
 ### Patch Changes
