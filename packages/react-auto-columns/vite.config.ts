@@ -9,14 +9,14 @@ export default defineConfig({
     // Prevent mangling in development for easier debugging
     minifyIdentifiers: process.env.NODE_ENV === "production",
   },
-  
+
   plugins: [react(), dts({ insertTypesEntry: true })],
   build: {
     emptyOutDir: false,
     lib: {
       entry: resolve(__dirname, "lib/columns.tsx"),
       name: "react-auto-columns",
-      fileName: (format) => `lib.${format}.js`,
+      fileName: (format) => `lib.${format}.${format === "es" ? "mjs" : "js"}`,
     },
     rollupOptions: {
       external: ["react", "react-dom"],

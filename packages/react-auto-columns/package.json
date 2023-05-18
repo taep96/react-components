@@ -30,12 +30,13 @@
     "README.md"
   ],
   "main": "./dist/lib.umd.js",
-  "module": "./dist/lib.es.js",
+  "module": "./dist/lib.es.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/lib.es.js",
-      "require": "./dist/lib.umd.js"
+      "require": "./dist/lib.umd.js",
+      "import": "./dist/lib.es.mjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "scripts": {
