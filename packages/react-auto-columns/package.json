@@ -29,14 +29,14 @@
     "dist",
     "README.md"
   ],
-  "main": "./dist/lib.umd.js",
-  "module": "./dist/lib.es.mjs",
   "types": "./dist/index.d.ts",
+  "module": "./dist/lib.es.mjs",
+  "main": "./dist/lib.umd.js",
   "exports": {
     ".": {
-      "require": "./dist/lib.umd.js",
+      "types": "./dist/index.d.ts",
       "import": "./dist/lib.es.mjs",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/lib.umd.js"
     }
   },
   "scripts": {
