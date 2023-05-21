@@ -1,4 +1,4 @@
-import { Children, useEffect, useState } from "react";
+import React, { Children, useEffect, useState } from "react";
 
 function calculateColumnCount(
   columns: ColumnsProps["columns"],
@@ -12,8 +12,8 @@ function calculateColumnCount(
       .filter((key) => key <= windowWidth)
       .sort((a, b) => b - a);
 
-    // Return the column count for the breakpoint or 1 if no breakpoints are found
-    return columns[breakpoints[0]] || 1;
+    // If no breakpoints match, return 1 as the smallest column count
+    return (typeof breakpoints[0] === "number" && columns[breakpoints[0]]) || 1;
   }
 
   // If columns is a number, return it as is
@@ -72,7 +72,7 @@ export interface ColumnsProps extends React.HTMLAttributes<HTMLElement> {
   columns?: number | { [key in number]?: number };
 }
 
-export function Columns({
+export default function Columns({
   // * Don't forget to set default values for props
   children,
   columns = 3,
@@ -105,11 +105,8 @@ export function Columns({
   return (
     <div {...Props}>
       {columnArray.map((column, index) => (
-        // Using index as key here should be okay since it recalculates columnArray on every render
-        // eslint-disable-next-line react/no-array-index-key
-        <div className={columnClassName} key={index}>
-          {column}
-        </div>
+        // Using index as key here is probably okay since it recalculates columnArray on every render
+        <div className={columnClassName} key={index}>{column}</div>
       ))}
     </div>
   );

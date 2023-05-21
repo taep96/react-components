@@ -1,0 +1,7 @@
+{
+  "eslint.workingDirectories": [
+    { "pattern": "apps/*/" },
+    { "pattern": "packages/*/" }
+  ],
+  "tailwindCSS.experimental.configFile": "./apps/react-auto-columns-demo/tailwind.config.ts"
+}
