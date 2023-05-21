@@ -2,36 +2,36 @@
   "name": "react-components",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ],
   "scripts": {
+    "dev": "turbo dev",
     "build": "turbo build",
     "start": "turbo start",
-    "dev": "turbo dev",
     "lint": "turbo lint",
+    "postlint": "manypkg check",
     "lint:fix": "turbo lint:fix",
-    "format": "turbo format",
-    "lint:root": "eslint . --cache",
-    "lint:fix:root": "eslint . --fix --cache",
-    "format:root": "prettier . --check --write --cache",
+    "postlint:fix": "manypkg fix",
+    "typecheck": "turbo typecheck",
+    "format": "prettier . !pnpm-lock.yaml --ignore-path .gitignore --write --check --cache",
     "publish-packages": "pnpm build && pnpm changeset publish"
   },
-  "devDependencies": {
+  "dependencies": {
+    "@changesets/changelog-github": "^0.4.8",
     "@changesets/cli": "^2.26.1",
     "@ianvs/prettier-plugin-sort-imports": "^3.7.2",
-    "@typescript-eslint/eslint-plugin": "^5.58.0",
-    "@typescript-eslint/parser": "^5.58.0",
-    "eslint": "^8.38.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-import": "^2.27.5",
-    "eslint-plugin-jsx-a11y": "^6.7.1",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.32.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.8.7",
-    "turbo": "^1.9.1"
-  }
+    "@manypkg/cli": "^0.20.0",
+    "@types/eslint": "^8.37.0",
+    "@types/node": "^20.2.1",
+    "@types/prettier": "^2.7.2",
+    "eslint": "^8.41.0",
+    "eslint-config-custom": "*",
+    "prettier": "^2.8.8",
+    "prettier-plugin-tailwindcss": "^0.3.0",
+    "turbo": "^1.9.8",
+    "typescript": "^5.0.4"
+  },
+  "engines": {
+    "node": "^18.0.0",
+    "pnpm": "^8.0.0"
+  },
+  "packageManager": "pnpm@8.5.1"
 }
