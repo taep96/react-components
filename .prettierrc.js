@@ -1,4 +1,6 @@
-/** @type {import("prettier").Config} */
+/** @typedef  {import("prettier").Config} PrettierConfig*/
+/** @typedef  {import("@ianvs/prettier-plugin-sort-imports").PluginConfig} SortImportsConfig*/
+/** @typedef  {{ tailwindConfig: string }} TailwindConfig*/
 const config = {
   plugins: [
     require.resolve("@ianvs/prettier-plugin-sort-imports"),
@@ -10,6 +12,8 @@ const config = {
   importOrderSortSpecifiers: true,
   importOrderMergeDuplicateImports: true,
   importOrderCombineTypeAndValueImports: true,
+
+  tailwindConfig: "./apps/react-auto-columns-demo/tailwind.config.ts",
 };
 
 module.exports = config;
