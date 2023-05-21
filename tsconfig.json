@@ -1,7 +1,20 @@
 {
-  "include": ["vite.config.ts", "*.config.*", ".eslintrc.cjs"],
-  "references": [
-    { "path": "./react-auto-columns/tsconfig.json" },
-    { "path": "./react-auto-columns-demo/tsconfig.json" }
-  ]
+  "compilerOptions": {
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "target": "esnext",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "checkJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "noUncheckedIndexedAccess": true,
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["**/.*.js", "**/*.js", "**/*.ts", "**/*.tsx"]
 }

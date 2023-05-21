@@ -1,11 +1,12 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.3.0/schema.json",
-  "changelog": "@changesets/cli/changelog",
-  "commit": true,
-  "fixed": [],
-  "linked": [],
+  "changelog": [
+    "@changesets/changelog-github",
+    { "repo": "taep96/react-components" }
+  ],
+  "commit": false,
   "access": "public",
   "baseBranch": "main",
   "updateInternalDependencies": "patch",
-  "ignore": ["react-components-demo"]
+  "ignore": ["eslint-config-custom", "*-demo"]
 }

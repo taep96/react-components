@@ -43,7 +43,7 @@ import { Columns } from "react-auto-columns";
   <div>8</div>
   <div>9</div>
   <div>10</div>
-</Columns>;
+</Columns>
 ```
 
 While the default value for the columns prop is 3, if no breakpoints match it

@@ -1,7 +1,9 @@
-import { useState } from "react";
-import { Columns } from "react-auto-columns";
+"use client";
 
-function App() {
+import { useState } from "react";
+import Columns from "react-auto-columns";
+
+export default function Page() {
   const [count, setCount] = useState(3);
   const [responsive, setResponsive] = useState(true);
 
@@ -21,7 +23,7 @@ function App() {
             f12
           </kbd>
           )
-          <kbd className="`rounded border border-zinc-900 bg-zinc-800 px-1 py-0.5 text-sm">
+          <kbd className="rounded border border-zinc-900 bg-zinc-800 px-1 py-0.5 text-sm">
             Ctrl + Shift + M
           </kbd>
         </p>
@@ -42,7 +44,7 @@ function App() {
           <button
             className="h-12 w-12 rounded-full bg-zinc-700"
             type="button"
-            onClick={() => setCount(count + 1)}
+            onClick={() => setCount(Math.min(count + 1, 100))}
           >
             +
           </button>
@@ -50,7 +52,7 @@ function App() {
           <button
             className="h-12 w-12 rounded-full bg-zinc-700"
             type="button"
-            onClick={() => setCount(count - 1)}
+            onClick={() => setCount(Math.max(count - 1, 1))}
           >
             -
           </button>
@@ -83,5 +85,3 @@ function App() {
     </div>
   );
 }
-
-export default App;

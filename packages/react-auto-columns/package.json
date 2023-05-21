@@ -15,48 +15,43 @@
     "Discord",
     "GIF"
   ],
-  "homepage": "https://github.com/taep96/react-components/tree/main/react-auto-columns#README",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/taep96/react-components/tree/main/react-auto-columns"
-  },
-  "bugs": {
-    "url": "https://github.com/taep96/react-components/issues"
-  },
   "license": "MIT",
   "author": "taep96 <taep96@cock.li> (https://taep96.moe/)",
+  "repository": {
+    "url": "github:taep96/react-components",
+    "directory": "packages/react-auto-columns"
+  },
+  "homepage": "https://github.com/taep96/react-components/tree/main/react-auto-columns#README",
   "files": [
-    "dist",
-    "README.md"
+    "dist"
   ],
   "types": "./dist/index.d.ts",
-  "module": "./dist/lib.es.mjs",
-  "main": "./dist/lib.umd.js",
+  "module": "./dist/index.mjs",
+  "main": "./dist/index.js",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
-      "import": "./dist/lib.es.mjs",
-      "require": "./dist/lib.umd.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
     }
   },
   "scripts": {
-    "build": "tsc && vite build",
-    "dev": "tsc --watch & NODE_ENV=development vite build --watch --clearScreen false",
+    "dev": "tsup --watch",
+    "build": "tsup",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --fix --cache",
-    "format": "prettier . --check --write --ignore-path ../../.prettierignore  --cache"
+    "typecheck": "tsc"
   },
   "peerDependencies": {
     "react": "^16.0.0 || ^17.0.0 || ^18.0.0",
     "react-dom": "^16.0.0 || ^17.0.0 || ^18.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.33",
-    "@types/react-dom": "^18.0.6",
-    "@vitejs/plugin-react-swc": "^3.3.0",
-    "typescript": "^5.0.4",
-    "vite": "^4.2.1",
-    "vite-plugin-dts": "^2.2.0"
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "18.2.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tsup": "^6.7.0",
+    "typescript": "^5.0.4"
   }
 }
