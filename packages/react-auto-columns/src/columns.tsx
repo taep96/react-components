@@ -2,18 +2,25 @@ import React, { Children, useEffect, useState } from "react";
 
 function calculateColumnCount(
   columns: ColumnsProps["columns"],
-  windowWidth: number
+  windowWidth?: number
 ) {
   // If columns is an object, find the largest breakpoint that is smaller than the window width
-  if (windowWidth && typeof columns === "object") {
-    // Filter out breakpoints that are larger than the window width and sort them from largest to smallest
-    const breakpoints = Object.keys(columns)
-      .map(Number)
-      .filter((key) => key <= windowWidth)
-      .sort((a, b) => b - a);
+  if (typeof columns === "object") {
+    if (windowWidth) {
+      // Filter out breakpoints that are larger than the window width and sort them from largest to smallest
+      const breakpoints = Object.keys(columns)
+        .map(Number)
+        .filter((key) => key <= windowWidth)
+        .sort((a, b) => b - a);
 
-    // If no breakpoints match, return 1 as the smallest column count
-    return (typeof breakpoints[0] === "number" && columns[breakpoints[0]]) || 1;
+      // If no breakpoints match, return 1 as the smallest column count
+      return (
+        (typeof breakpoints[0] === "number" && columns[breakpoints[0]]) || 1
+      );
+    }
+
+    // If no window width is provided (e.g. in SSR), return the biggest column count
+    return Math.max(...Object.values(columns).map(Number));
   }
 
   // If columns is a number, return it as is
@@ -79,7 +86,7 @@ export default function Columns({
   columnClassName = "",
   ...Props
 }: ColumnsProps) {
-  const [columnCount, setColumnCount] = useState(3);
+  const [columnCount, setColumnCount] = useState(calculateColumnCount(columns));
   const [columnArray, setColumnArray] = useState(() =>
     getColumnArray(children, columnCount)
   );
@@ -106,7 +113,9 @@ export default function Columns({
     <div {...Props}>
       {columnArray.map((column, index) => (
         // Using index as key here is probably okay since it recalculates columnArray on every render
-        <div className={columnClassName} key={index}>{column}</div>
+        <div className={columnClassName} key={index}>
+          {column}
+        </div>
       ))}
     </div>
   );
