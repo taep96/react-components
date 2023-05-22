@@ -1,5 +1,11 @@
 # react-auto-columns
 
+## 2.1.0
+
+### Minor Changes
+
+- [#6](https://github.com/taep96/react-components/pull/6) [`261c639`](https://github.com/taep96/react-components/commit/261c63973010e2193d946ecf251244ea99367717) Thanks [@taep96](https://github.com/taep96)! - Fix empty columns rendering in SSR, which caused a flash of empty space before the columns recalculated with window width.
+
 ## 2.0.0
 
 ### Major Changes
