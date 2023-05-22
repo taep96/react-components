@@ -31,7 +31,7 @@ jobs:
             ${{ runner.os }}-nextjs-${{ hashFiles('**/pnpm-lock.yaml') }}-
 
       - name: Build, lint, and type-check
-        run: pnpm turbo build lint type-check
+        run: pnpm turbo build lint typecheck
 
       - name: Check workspaces
         run: pnpm manypkg check
