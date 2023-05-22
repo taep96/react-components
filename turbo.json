@@ -1,5 +1,6 @@
 {
   "$schema": "https://turbo.build/schema.json",
+  "globalEnv": ["CI"],
   "pipeline": {
     "dev": {
       "cache": false,
@@ -15,6 +16,8 @@
     },
     "lint": {},
     "lint:fix": {},
-    "typecheck": {}
+    "typecheck": {
+      "dependsOn": ["^build", "build"]
+    }
   }
 }
