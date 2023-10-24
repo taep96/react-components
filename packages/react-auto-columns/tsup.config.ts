@@ -9,5 +9,5 @@ export default defineConfig((options) => ({
   clean: !options.watch,
   banner: {
     js: '"use client";',
-  }
+  },
 }));

@@ -35,4 +35,3 @@ jobs:
 
       - name: Check workspaces
         run: pnpm manypkg check
-

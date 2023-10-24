@@ -1,0 +1,20 @@
+{
+  "root": true,
+  "extends": ["eslint-config-custom"],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": [
+      "./tsconfig.json",
+      "./apps/*/tsconfig.json",
+      "./packages/*/tsconfig.json"
+    ]
+  },
+  "settings": {
+    "next": {
+      "rootDir": ["apps/*"]
+    },
+    "tailwindcss": {
+      "config": "apps/react-auto-columns-demo/tailwind.config.ts"
+    }
+  }
+}

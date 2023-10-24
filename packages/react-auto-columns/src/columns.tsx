@@ -2,7 +2,7 @@ import React, { Children, useEffect, useState } from "react";
 
 function calculateColumnCount(
   columns: ColumnsProps["columns"],
-  windowWidth?: number
+  windowWidth?: number,
 ) {
   // If columns is an object, find the largest breakpoint that is smaller than the window width
   if (typeof columns === "object") {
@@ -88,7 +88,7 @@ export default function Columns({
 }: ColumnsProps) {
   const [columnCount, setColumnCount] = useState(calculateColumnCount(columns));
   const [columnArray, setColumnArray] = useState(() =>
-    getColumnArray(children, columnCount)
+    getColumnArray(children, columnCount),
   );
 
   // Update columnCount and columnArray when the window is resized or the columns prop changes

@@ -27,7 +27,7 @@ const config = {
   settings: {
     react: {
       version: "18",
-    }
+    },
   },
   ignorePatterns: ["dist"],
   reportUnusedDisableDirectives: true,
