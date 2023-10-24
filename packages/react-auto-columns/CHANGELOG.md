@@ -1,5 +1,11 @@
 # react-auto-columns
 
+## 2.2.0
+
+### Minor Changes
+
+- [`3e6d921`](https://github.com/taep96/react-components/commit/3e6d9213066d87ec1d027a811e550bcae57a586e) Thanks [@taep96](https://github.com/taep96)! - update dependencies
+
 ## 2.1.0
 
 ### Minor Changes
